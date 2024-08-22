@@ -26,3 +26,9 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Build
         run: mvn -B verify
+        
+      - name: Upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: jar
+          path: target/*.jar
